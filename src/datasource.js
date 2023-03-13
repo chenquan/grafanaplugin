@@ -5,7 +5,7 @@ var moment = require('./js/moment-timezone-with-data');
 export class GenericDatasource {
 
   constructor(instanceSettings, $q, backendSrv, templateSrv) {
-    // console.log("instanceSettings",instanceSettings);
+    console.log("instanceSettings",instanceSettings);
     this.pluginId = instanceSettings.type;
     this.url = instanceSettings.url;
     this.name = instanceSettings.name;
@@ -70,7 +70,7 @@ export class GenericDatasource {
 
   querySql(params) {
     return this.backendSrv.datasourceRequest({
-      url: this.url + "/v1/device/sql",
+      url: this.url + "/sql",
       data: params,
       method: 'POST',
     }).then((result) => {
