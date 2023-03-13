@@ -11,31 +11,14 @@
 
   "routes": [
     {
-      "path": "sqlutc",
-      "url": "{{ .SecureJsonData.url }}/rest/sqlutc",
-      "method": "POST",
-      "headers": [
-        {
-          "name": "Authorization",
-          "content": "Basic {{ .SecureJsonData.basicAuth }}"
-        }
-      ],
-      "urlParams": [
-        { "name": "token", "content": "{{ .SecureJsonData.token }}" }
-      ]
-    },
-    {
       "path": "sql",
-      "url": "{{ .SecureJsonData.url }}/rest/sql",
+      "url": "{{ .SecureJsonData.url }}/v1/open/device/sql",
       "method": "POST",
       "headers": [
         {
-          "name": "Authorization",
-          "content": "Basic {{ .SecureJsonData.basicAuth }}"
+          "name": "x-open-access-token",
+          "content": "{{ .SecureJsonData.token }}"
         }
-      ],
-      "urlParams": [
-        { "name": "token", "content": "{{ .SecureJsonData.token }}" }
       ]
     }
   ],

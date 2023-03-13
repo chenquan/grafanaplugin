@@ -34,6 +34,14 @@ export class GenericDatasourceConfigCtrl {
             this.current.secureJsonData = { basicAuth };
         }
     }
+    onTokenChange() {
+        let token = this.current.secureJsonData.token;
+        if (_.has(this.current, "secureJsonData")) {
+            this.current.secureJsonData.token = token;
+        } else {
+            this.current.secureJsonData = { token: this.current.token };
+        }
+    }
     encode(input) {
         var _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
         var output = "";
